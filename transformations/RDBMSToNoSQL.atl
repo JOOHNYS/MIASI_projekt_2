@@ -1,0 +1,65 @@
+-- @path MM=/MIASI_projekt_2-main/metamodels/RDBS_metamodel.ecore
+-- @path MM1=/MIASI_projekt_2-main/metamodels/noSQLmetamodel.ecore
+
+module RDBMSToNoSQL;
+create OUT : MM1 from IN : MM;
+
+-- Transformation rules
+rule DatabaseToNoSQLDatabase {
+  from
+    sqlDB : MM!DataBase
+  to
+    noSQLDB : MM1!DataBase (
+      name <- sqlDB.name,
+      TCollection <- sqlDB.table
+    )
+}
+
+rule TableToCollection {
+    from
+        t : MM!Table
+    to
+        c : MM1!TCollection (
+            name <- t.name,
+            document <- t.column
+        )
+}
+
+rule ColumnToDocument {
+    from
+        col : MM!Column
+    to
+        doc : MM1!Document (
+            name <- col.name,
+            field <- Sequence {
+                FieldName,
+                FieldType,
+                FieldIsNullable,
+                FieldIsPrimaryKey,
+                FieldIsForeignKey
+            }
+        ),
+        FieldName : MM1!Field (
+            key <- 'name',
+            value <- col.name
+        ),
+        FieldType : MM1!Field (
+            key <- 'type',
+            value <- col.type
+        ),
+        FieldIsNullable : MM1!Field (
+            key <- 'isNullable',
+            value <- col.isNullable.toString()
+        ),
+        FieldIsPrimaryKey : MM1!Field (
+            key <- 'PrimaryKey',
+            value <- col.isPrimaryKey.toString()
+        ),
+        FieldIsForeignKey : MM1!Field (
+            key <- 'ForeignKey',
+            value <- col.isForeignKey.toString()
+        )
+}
+
+
+

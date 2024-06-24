@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDBS_metamodel:DataBase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RDBS_metamodel="http://www.example.org/RDBS_metamodel">
+  <table name="Students">
+    <column name="first_name" type="EString"/>
+    <column name="last_name" type="EString"/>
+    <column name="birthdate" type="EDate"/>
+    <column name="gender" type="EString"/>
+    <column name="student_id" type="EInt" primarykeycontraint="//@table.0/@contraint.0" foreignkeycontraint="//@table.2/@contraint.0"/>
+    <contraint xsi:type="RDBS_metamodel:PrimaryKeyContraint" name="students" column="//@table.0/@column.4"/>
+  </table>
+  <table name="Courses">
+    <column name="course_id" type="EInt" primarykeycontraint="//@table.1/@contraint.0" foreignkeycontraint="//@table.2/@contraint.1"/>
+    <column name="course_desc" type="EString"/>
+    <column name="course_name" type="EString"/>
+    <contraint xsi:type="RDBS_metamodel:PrimaryKeyContraint" name="courses" column="//@table.1/@column.0"/>
+  </table>
+  <table name="Enrollments">
+    <column name="enrollment_date" type="EDate"/>
+    <column name="enrollment_id" type="EInt"/>
+    <contraint xsi:type="RDBS_metamodel:ForeignKeyContraint" type="EInt" name="students" column="//@table.0/@column.4"/>
+    <contraint xsi:type="RDBS_metamodel:ForeignKeyContraint" type="EInt" name="courses" column="//@table.1/@column.0"/>
+  </table>
+</RDBS_metamodel:DataBase>
