@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<noSQLmetamodel:DataBase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:noSQLmetamodel="http://www.example.org/noSQLmetamodel">
+  <TCollection name="Students">
+    <document name="first_name">
+      <field key="name" value="first_name"/>
+      <field key="type" value="EString"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+    <document name="last_name">
+      <field key="name" value="last_name"/>
+      <field key="type" value="EString"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+    <document name="birthdate">
+      <field key="name" value="birthdate"/>
+      <field key="type" value="EDate"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+    <document name="gender">
+      <field key="name" value="gender"/>
+      <field key="type" value="EString"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+    <document name="student_id">
+      <field key="name" value="student_id"/>
+      <field key="type" value="EInt"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+  </TCollection>
+  <TCollection name="Courses">
+    <document name="course_id">
+      <field key="name" value="course_id"/>
+      <field key="type" value="EInt"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+    <document name="course_desc">
+      <field key="name" value="course_desc"/>
+      <field key="type" value="EString"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+    <document name="course_name">
+      <field key="name" value="course_name"/>
+      <field key="type" value="EString"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+  </TCollection>
+  <TCollection name="Enrollments">
+    <document name="enrollment_date">
+      <field key="name" value="enrollment_date"/>
+      <field key="type" value="EDate"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+    <document name="enrollment_id">
+      <field key="name" value="enrollment_id"/>
+      <field key="type" value="EInt"/>
+      <field key="isNullable" value="false"/>
+      <field key="PrimaryKey" value="false"/>
+      <field key="ForeignKey" value="false"/>
+    </document>
+  </TCollection>
+</noSQLmetamodel:DataBase>
