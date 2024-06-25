@@ -1,0 +1,196 @@
+// Generate MongoDB collections
+db.runCommand({
+  collMod: "Students",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [
+        "birthdate",
+        "first_name",
+        "course_id",
+        "course_name",
+        "student_id",
+        "course_desc",
+        "enrollment_date",
+        "last_name",
+        "gender",
+        "enrollment_id",
+       ],
+      properties: {
+        "birthdate": {
+          bsonType: "Date",
+          description: "must be a Date and is required"
+        },
+        "first_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "course_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+        "course_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "student_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+        "course_desc": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "enrollment_date": {
+          bsonType: "Date",
+          description: "must be a Date and is required"
+        },
+        "last_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "gender": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "enrollment_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+      }
+    }
+  },
+  validationLevel: "strict",
+  validationAction: "error"
+});
+
+db.runCommand({
+  collMod: "Courses",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [
+        "birthdate",
+        "first_name",
+        "course_id",
+        "course_name",
+        "student_id",
+        "course_desc",
+        "enrollment_date",
+        "last_name",
+        "gender",
+        "enrollment_id",
+       ],
+      properties: {
+        "birthdate": {
+          bsonType: "Date",
+          description: "must be a Date and is required"
+        },
+        "first_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "course_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+        "course_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "student_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+        "course_desc": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "enrollment_date": {
+          bsonType: "Date",
+          description: "must be a Date and is required"
+        },
+        "last_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "gender": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "enrollment_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+      }
+    }
+  },
+  validationLevel: "strict",
+  validationAction: "error"
+});
+
+db.runCommand({
+  collMod: "Enrollments",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [
+        "birthdate",
+        "first_name",
+        "course_id",
+        "course_name",
+        "student_id",
+        "course_desc",
+        "enrollment_date",
+        "last_name",
+        "gender",
+        "enrollment_id",
+       ],
+      properties: {
+        "birthdate": {
+          bsonType: "Date",
+          description: "must be a Date and is required"
+        },
+        "first_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "course_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+        "course_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "student_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+        "course_desc": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "enrollment_date": {
+          bsonType: "Date",
+          description: "must be a Date and is required"
+        },
+        "last_name": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "gender": {
+          bsonType: "String",
+          description: "must be a String and is required"
+        },
+        "enrollment_id": {
+          bsonType: "Integer",
+          description: "must be a Integer and is required"
+        },
+      }
+    }
+  },
+  validationLevel: "strict",
+  validationAction: "error"
+});
+

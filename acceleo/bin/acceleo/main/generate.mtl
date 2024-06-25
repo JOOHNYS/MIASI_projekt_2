@@ -1,0 +1,84 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.example.org/noSQLmetamodel')]
+
+
+[**
+ * Szablon generujący skrypt MongoDB dla bazy danych.
+ * @param aDataBase Model bazy danych.
+ * @template generateElement
+ */]
+[template public generateElement(aDataBase : DataBase)]
+[comment @main/]
+[file (if aDataBase.name.oclIsUndefined() then 'new_db.nosql' else aDataBase.name.concat('.nosql') endif, false, 'UTF-8')]
+[for (collection : noSQLmetamodel::TCollection | aDataBase.TCollection)]
+db.runCommand({
+  collMod: "[collection.name/]",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ '[' /]
+        [for (document : noSQLmetamodel::Document | noSQLmetamodel::Document.allInstances())]
+        "[document.name/]",
+        [/for]
+       [ ']' /],
+      properties: {
+        [for (document : noSQLmetamodel::Document | noSQLmetamodel::Document.allInstances())]
+        "[document.name/]": {
+          bsonType: "[getBsonType(document)/]",
+          description: "must be a [getBsonType(document)/] and is required"
+        },
+        [/for]
+      }
+    }
+  },
+  validationLevel: "strict",
+  validationAction: "error"
+});
+
+[/for]
+[/file]
+[/template]
+
+[**
+ * Określanie typu BSON dla pola dokumentu.
+ * @param document Dokument.
+ * @template getBsonType
+ */]
+[template public getBsonType(document : noSQLmetamodel::Document)]
+[document.field->select(f | f.key = 'type')->first().value.getMongoDBType()/]
+[/template]
+
+[**
+ * Mapowanie typów z metamodelu NoSQL na typy BSON MongoDB.
+ * @param input Typ z metamodelu NoSQL.
+ * @return Typ BSON MongoDB.
+ * @query getMongoDBType
+ */]
+[query public getMongoDBType(input : String) : String =
+  if input = 'EString' then
+    'String'
+  else
+    if input = 'EInt' then
+      'Integer'
+    else
+      if input = 'EDouble' or input = 'EFloat' then
+        'Decimal'
+      else
+        if input = 'EBoolean' then
+          'Boolean'
+        else
+          if input = 'EDate' then
+            'Date'
+          else
+            'String'
+          endif
+        endif
+      endif
+    endif
+  endif
+/]
+
+[/module]

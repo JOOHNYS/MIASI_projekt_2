@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:noSQLmetamodel="http://www.example.org/noSQLmetamodel">
+  <noSQLmetamodel:DataBase>
+    <TCollection name="Students"/>
+    <TCollection name="Courses"/>
+    <TCollection name="Enrollments"/>
+  </noSQLmetamodel:DataBase>
+  <noSQLmetamodel:Document name="first_name">
+    <field key="name" value="first_name"/>
+    <field key="type" value="EString"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="last_name">
+    <field key="name" value="last_name"/>
+    <field key="type" value="EString"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="birthdate">
+    <field key="name" value="birthdate"/>
+    <field key="type" value="EDate"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="gender">
+    <field key="name" value="gender"/>
+    <field key="type" value="EString"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="student_id">
+    <field key="name" value="student_id"/>
+    <field key="type" value="EInt"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="course_id">
+    <field key="name" value="course_id"/>
+    <field key="type" value="EInt"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="course_desc">
+    <field key="name" value="course_desc"/>
+    <field key="type" value="EString"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="course_name">
+    <field key="name" value="course_name"/>
+    <field key="type" value="EString"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="enrollment_date">
+    <field key="name" value="enrollment_date"/>
+    <field key="type" value="EDate"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+  <noSQLmetamodel:Document name="enrollment_id">
+    <field key="name" value="enrollment_id"/>
+    <field key="type" value="EInt"/>
+    <field key="isNullable" value="false"/>
+    <field key="isPrimaryKey" value="false"/>
+    <field key="isForeignKey" value="false"/>
+  </noSQLmetamodel:Document>
+</xmi:XMI>

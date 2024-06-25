@@ -1,0 +1,10 @@
+"// Code to create NoSQL Database\n"
+"Database name: "
+"\n"
+  "\ndb.createCollection('"Students "') {\n"
+  "}\n"
+  "\ndb.createCollection('"Courses "') {\n"
+  "}\n"
+  "\ndb.createCollection('"Enrollments "') {\n"
+  "}\n"
+
